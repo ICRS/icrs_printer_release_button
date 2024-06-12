@@ -29,13 +29,9 @@ unsigned long lastUpdateTime = 0;
 const unsigned long updateInterval = 10000; // Interval to update mode in milliseconds
 
 void updateMode() {
-  // POST request to get printer status
-  String contentType = "application/json";
-  String postData = "{\"\"}";
+  String url = "/availability?printer_name=" + (String) printerName;
 
-  String url = "/availability?printer_name=" + (String) printerName + "&available=true";
-
-  client.post(url, contentType, postData);
+  client.get(url);
 
   // Read the status code and body of the response
   int statusCode = client.responseStatusCode();
@@ -49,9 +45,9 @@ void updateMode() {
   if (statusCode == 200) {
     // Check the response content and update mode accordingly
     // Assuming response contains some status info
-    if (response.indexOf("available") >= 0) {
+    if (response.indexOf("true") >= 0) {
       mode = GREEN; // Set mode to green if printer is available
-    } else if (response.indexOf("busy") >= 0) {
+    } else if (response.indexOf("false") >= 0) {
       mode = YELLOW; // Set mode to yellow if printer is busy
     } else {
       mode = RED; // Set mode to red if status is unknown
