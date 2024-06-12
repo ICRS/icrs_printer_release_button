@@ -164,10 +164,6 @@ void loop() {
   // Check if the button is pressed
   if (digitalRead(BUTTON_PIN) == LOW) {
     flashLED(YELLOW, 5, 100);
-    if (mode != YELLOW) { // Button press only works when mode is not yellow
-      flashLED(RED, 10, 100);
-      return;
-    }
     Serial.println("Making POST request");
 
     String contentType = "application/json";
