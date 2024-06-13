@@ -36,6 +36,10 @@ The wiring for the ESP32C3 development board is as follows:
 - Push switch on D4 and D5
 - LED ground to GND
 
+<html>
+<img src="https://files.seeedstudio.com/wiki/XIAO_WiFi/pin_map-2.png">
+</html>
+
 ## Getting Started
 
 To get started with this project, follow these steps:
