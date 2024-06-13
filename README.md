@@ -42,7 +42,7 @@ To get started with this project, follow these steps:
 
 1. **Clone the repository**:
     ```sh
-    git clone <repository-url>
+    git clone https://github.com/ICRS/icrs_printer_release_button.git
     ```
 2. **Open the project in Visual Studio Code**.
 3. **Build and upload the firmware** using PlatformIO.
